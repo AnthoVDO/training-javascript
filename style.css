@@ -1,0 +1,12 @@
+#changeColor {
+  border: solid 3px blue;
+  background-color: gold;
+  text-align: center;
+}
+
+.colorA {
+  border: gold;
+  background-color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */

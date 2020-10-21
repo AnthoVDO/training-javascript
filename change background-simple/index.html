@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background color simple</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+        }
+        
+        h3 {
+            border: 2px solid #a1a1a1;
+            color: #a1a1a1;
+            padding: 20px;
+            border-radius: 5px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <h3>
+            click me!
+        </h3>
+
+    </div>
+
+    <script>
+        const background = document.querySelector('.container');
+        const click = document.querySelector('h3');
+
+        const color = ['blue', 'red', 'yellow', 'brun', 'green', 'white', 'purple', 'pink']
+
+        click.addEventListener('click', changeColor);
+
+        let random = function(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+
+        function changeColor() {
+            let i = random(0, 7)
+            background.style.background = color[i];
+        }
+    </script>
+</body>
+
+</html>
