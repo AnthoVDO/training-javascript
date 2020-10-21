@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background color hexacode</title>
+    <style>
+        .container {
+            background-color: #fa1245;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        h1 {
+            color: black;
+            padding: 20px;
+        }
+        
+        h3 {
+            background-color: #a1a1a1;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            Hex Color : <span class="ref">#fa1245</span>
+        </h1>
+        <h3>
+            Click me
+        </h3>
+    </div>
+
+
+
+
+    <script>
+        const background = document.querySelector('.container');
+        const h1 = document.querySelector('h1');
+        const h3 = document.querySelector('h3');
+        const span = document.querySelector('span');
+        const hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+        let number = [];
+
+        h3.addEventListener('click', changeColor);
+
+        let random = function(min, max) {
+            return Math.round(Math.random() * (max - min) + min)
+        }
+
+        let newColor = function() {
+            number = [];
+            for (let i = 0; i < 6; i++) {
+                number.push(hex[random(0, 16)])
+            }
+            number = number.join('')
+            number = '#' + number;
+            console.log(number);
+            return number;
+        }
+
+        function changeColor() {
+            background.style.background = newColor();
+            span.textContent = newColor();
+
+        }
+    </script>
+
+</body>
+
+</html>
